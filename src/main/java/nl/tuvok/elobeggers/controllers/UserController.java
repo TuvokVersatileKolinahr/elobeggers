@@ -9,8 +9,9 @@ import nl.tuvok.elobeggers.services.UserService;
 
 public class UserController {
 	public UserController(final UserService userService) {
-		before((request, response) -> response.type("application/json"));
+		
 
+		get("/user/:id", (req, res) -> userService.getUser(req.params("id")), json());
 		get("/users", (req, res) -> userService.getAllUsers(), json());
 		
 		post("/user", "application/json", (req, res) -> userService.createUser(req.body()), json());

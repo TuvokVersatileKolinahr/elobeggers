@@ -1,11 +1,9 @@
 package nl.tuvok.elobeggers.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
-import org.mongodb.morphia.query.Query;
 
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
@@ -16,17 +14,8 @@ public class UserService {
 	User nullUser;
 	final Datastore datastore;
 	
-	public UserService() {
-		final Morphia morphia = new Morphia();
-
-		// tell Morphia where to find your classes
-		// can be called multiple times with different packages or classes
-		morphia.mapPackage("nl.tuvok.elobeggers.models");
-
-		// create the Datastore connecting to the default port on the local host
-		datastore = morphia.createDatastore(new MongoClient(), "morphia_example");
-		datastore.ensureIndexes();
-
+	public UserService(Datastore ds) {
+		datastore = ds;
 		
 		nullUser = new User();
 		nullUser.name = "Null";
@@ -34,15 +23,13 @@ public class UserService {
 	}
 
 	// returns a list of all users
-	public List<User> getAllUsers() {
-		Query<User> findQuery = datastore.find(User.class);
-		// final List<User> users = findQuery.asList();
-		return findQuery.asList();
+	public List<User> getAllUsers() {	
+		return datastore.find(User.class).asList();
 	}
 
 	// returns a single user by id
 	public User getUser(String id) {
-		return nullUser;
+		return datastore.get(User.class, id);
 	}
 
 	// creates a new user
