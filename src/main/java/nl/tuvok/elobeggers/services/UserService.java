@@ -51,10 +51,12 @@ public class UserService {
 
 	// returns a list of all users
 	public List<User> getAllUsers() {
-		// ..
-		List<User> ret = new ArrayList<User>();
-		ret.add(nullUser);
-		return ret;
+//		// ..
+//		List<User> ret = new ArrayList<User>();
+//		ret.add(nullUser);
+//		return ret;
+//		
+		return datastore.find(User.class).asList();
 	}
 
 	// returns a single user by id
@@ -74,8 +76,7 @@ public class UserService {
 //		} finally {
 //			cursor.close();
 //		}
-
-		return nullUser;
+		return datastore.get(User.class, id);
 	}
 
 	// creates a new user
