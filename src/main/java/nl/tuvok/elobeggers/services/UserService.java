@@ -14,17 +14,8 @@ public class UserService {
 	User nullUser;
 	final Datastore datastore;
 	
-	public UserService() {
-		final Morphia morphia = new Morphia();
-
-		// tell Morphia where to find your classes
-		// can be called multiple times with different packages or classes
-		morphia.mapPackage("nl.tuvok.elobeggers.models");
-
-		// create the Datastore connecting to the default port on the local host
-		datastore = morphia.createDatastore(new MongoClient(), "morphia_example");
-		datastore.ensureIndexes();
-
+	public UserService(Datastore ds) {
+		datastore = ds;
 		
 		nullUser = new User();
 		nullUser.name = "Null";
