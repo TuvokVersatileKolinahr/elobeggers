@@ -1,9 +1,6 @@
 package nl.tuvok.elobeggers;
 
-import static spark.Spark.get;
-import static spark.Spark.init;
-import static spark.Spark.staticFileLocation;
-import static spark.Spark.webSocket;
+import static spark.Spark.*;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -23,8 +20,9 @@ public class Main {
 	public static DB db;
 
 	public static void main(String[] args) {
-		staticFileLocation("/public"); // index.html is served at localhost:4567
-										// (default port)
+		port(4567);
+		staticFileLocation("/public"); 
+		
 		webSocket("/chat", ChatWebSocketHandler.class);
 		get("/hello", (req, res) -> "Hello World");
 
@@ -32,7 +30,6 @@ public class Main {
 		db = mongoClient.getDB("mydb");
 
 		new UserController(new UserService());
-		init();
 	}
 
 	// Sends a message from one user to all users, along with a list of current
@@ -53,3 +50,4 @@ public class Main {
 		return "User " + sender + ", says: " + message + "<br>";
 	}
 }
+
