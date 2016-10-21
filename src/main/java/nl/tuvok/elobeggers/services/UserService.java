@@ -3,23 +3,16 @@ package nl.tuvok.elobeggers.services;
 import java.util.List;
 
 import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.Morphia;
 
 import com.google.gson.Gson;
-import com.mongodb.MongoClient;
 
 import nl.tuvok.elobeggers.models.User;
 
 public class UserService {
-	User nullUser;
 	final Datastore datastore;
 	
 	public UserService(Datastore ds) {
 		datastore = ds;
-		
-		nullUser = new User();
-		nullUser.name = "Null";
-		nullUser.email = "null@nothing.com";
 	}
 
 	// returns a list of all users
