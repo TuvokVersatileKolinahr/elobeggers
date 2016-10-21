@@ -1,15 +1,18 @@
 package nl.tuvok.elobeggers;
 
-import static spark.Spark.*;
+
+import static spark.Spark.port;
+import static spark.Spark.staticFileLocation;
+import static spark.Spark.webSocket;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.eclipse.jetty.websocket.api.Session;
-import org.json.*;
+import org.json.JSONObject;
 
-import com.mongodb.DB;
 import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
 
 import nl.tuvok.elobeggers.controllers.UserController;
 import nl.tuvok.elobeggers.services.UserService;
@@ -17,17 +20,19 @@ import nl.tuvok.elobeggers.services.UserService;
 public class Main {
 	static Map<Session, String> userUsernameMap = new ConcurrentHashMap<>();
 	static int nextUserNumber = 1; // Used for creating the next username
-	public static DB db;
+	public static MongoDatabase db;
 
 	public static void main(String[] args) {
 		port(4567);
 		staticFileLocation("/public"); 
 		
 		webSocket("/chat", ChatWebSocketHandler.class);
-		get("/hello", (req, res) -> "Hello World");
 
+		// TODO: find a way to cleanly stop and close the client when
+		// application stops
+		@SuppressWarnings("resource")
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
-		db = mongoClient.getDB("mydb");
+		db = mongoClient.getDatabase("mydb");
 
 		new UserController(new UserService());
 	}
@@ -49,5 +54,6 @@ public class Main {
 	private static String createHtmlMessageFromSender(String sender, String message) {
 		return "User " + sender + ", says: " + message + "<br>";
 	}
+
 }
 
