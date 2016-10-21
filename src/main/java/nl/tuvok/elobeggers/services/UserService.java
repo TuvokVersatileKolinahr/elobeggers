@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
+import org.mongodb.morphia.query.Query;
 
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
@@ -34,10 +35,9 @@ public class UserService {
 
 	// returns a list of all users
 	public List<User> getAllUsers() {
-		// ..
-		List<User> ret = new ArrayList<User>();
-		ret.add(nullUser);
-		return ret;
+		Query<User> findQuery = datastore.find(User.class);
+		// final List<User> users = findQuery.asList();
+		return findQuery.asList();
 	}
 
 	// returns a single user by id
