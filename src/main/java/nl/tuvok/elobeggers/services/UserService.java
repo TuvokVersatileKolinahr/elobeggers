@@ -2,6 +2,7 @@ package nl.tuvok.elobeggers.services;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 
@@ -29,7 +30,7 @@ public class UserService {
 
 	// returns a single user by id
 	public User getUser(String id) {
-		return datastore.get(User.class, id);
+		return datastore.get(User.class, new ObjectId(id));
 	}
 
 	// creates a new user
