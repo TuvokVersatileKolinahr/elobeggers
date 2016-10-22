@@ -65,7 +65,7 @@ public class Main {
 	}
 
 	private static String createHtmlMessageFromSender(String sender, String message) {
-		return "User " + sender + ", says: " + message + "<br>";
+		return sender + " says: " + message + "<br>";
 	}
 
 }
