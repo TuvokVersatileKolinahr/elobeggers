@@ -18,8 +18,10 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
 import nl.tuvok.elobeggers.controllers.GameController;
+import nl.tuvok.elobeggers.controllers.PlayerController;
 import nl.tuvok.elobeggers.controllers.UserController;
 import nl.tuvok.elobeggers.services.GameService;
+import nl.tuvok.elobeggers.services.PlayerService;
 import nl.tuvok.elobeggers.services.UserService;
 
 public class Main {
@@ -47,6 +49,7 @@ public class Main {
 		datastore.ensureIndexes();
 		
 		new UserController(new UserService(datastore));
+		new PlayerController(new PlayerService(datastore));
 		new GameController(new GameService(datastore));
 	}
 

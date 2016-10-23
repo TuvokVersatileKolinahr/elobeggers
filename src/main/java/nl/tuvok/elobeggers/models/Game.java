@@ -11,7 +11,7 @@ import org.mongodb.morphia.annotations.Id;
 @Entity("games")
 public class Game {
 	@Id
-	private ObjectId id;
+	private String id;
 	
 	Team red = new Team();
 	Team blue = new Team();

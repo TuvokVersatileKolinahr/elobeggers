@@ -24,7 +24,7 @@ module.exports = webpackMerge(commonConfig, {
     contentBase: './src',
     proxy: {
       '/api': {
-        target: 'https://localhost:4567/',
+        target: 'http://localhost:4567',
         secure: false
       }
     }
