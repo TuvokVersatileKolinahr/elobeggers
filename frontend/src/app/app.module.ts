@@ -3,6 +3,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SEMANTIC_UI_COMPONENTS } from 'angular2-semantic-ui';
+import { HttpModule } from '@angular/http';
 
 import { LSUDemo } from './app';
 import { PAGES } from './pages';
@@ -19,6 +20,7 @@ import { AppRouts } from './app.routes';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(AppRouts, { useHash: true })
   ],
