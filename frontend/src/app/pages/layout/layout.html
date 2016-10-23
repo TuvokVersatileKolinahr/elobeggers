@@ -1,0 +1,20 @@
+<div class="ui visible inverted left vertical sidebar menu">
+  <a [routerLink]="['/']">
+    <div style="display: flex; padding: 5px 10px; align-items: center;">
+      <img width="50px" height="50px" src="http://semantic-ui.com/images/logo.png" style="border-radius: 50%;">
+      <div style="flex: 1; padding: 0 10px; color: white; font-size: 20px;">
+        Get Started
+      </div>
+    </div>
+  </a>
+  <div class="header">
+    COMPONENTS
+  </div>
+  <div class="ui inverted">
+    <a class="item menu" [routerLink]="['/players']" routerLinkActive="active">Players</a>
+    
+  </div>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

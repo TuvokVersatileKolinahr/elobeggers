@@ -8,7 +8,7 @@ import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
-@Entity("Games")
+@Entity("games")
 public class Game {
 	@Id
 	private ObjectId id;

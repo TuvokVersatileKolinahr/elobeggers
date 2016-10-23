@@ -34,12 +34,7 @@ public class Main {
 		webSocket("/chat", ChatWebSocketHandler.class);
 		before((request, response) -> response.type("application/json"));
 
-		// TODO: find a way to cleanly stop and close the client when
-		// application stops
-		@SuppressWarnings("resource")
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
-		db = mongoClient.getDatabase("mydb");
-
 		
 		final Morphia morphia = new Morphia();
 
@@ -48,7 +43,7 @@ public class Main {
 		morphia.mapPackage("nl.tuvok.elobeggers.models");
 
 		// create the Datastore connecting to the default port on the local host
-		final Datastore datastore = morphia.createDatastore(new MongoClient(), "morphia_example");
+		final Datastore datastore = morphia.createDatastore(mongoClient, "elobeggers");
 		datastore.ensureIndexes();
 		
 		new UserController(new UserService(datastore));
@@ -70,7 +65,7 @@ public class Main {
 	}
 
 	private static String createHtmlMessageFromSender(String sender, String message) {
-		return "User " + sender + ", says: " + message + "<br>";
+		return sender + " says: " + message + "<br>";
 	}
 
 }

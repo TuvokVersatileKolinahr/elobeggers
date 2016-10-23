@@ -1,14 +1,17 @@
 package nl.tuvok.elobeggers.models;
 
+import java.util.Date;
+
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
-@Entity("users")
-public class User {
+@Entity("players")
+public class Player {
 	@Id
 	private ObjectId id;
-	
-	public String name;
-	public String email;
+
+	public int elo;
+	public Date lastPlayed;
+	public User user;
 }
