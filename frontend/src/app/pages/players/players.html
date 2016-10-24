@@ -22,6 +22,15 @@
   </table>
   <lsu-loader [active]="activeLoader" [loaderText]="'Loading...'"></lsu-loader>
 </div>
-<div style="padding:5px 0;">
+<div style="padding:5px 0;" *ngIf="!pagerDisabled">
   <lsu-pagination [disabled]="pagerDisabled" [totalCount]="totalCount" [pageSize]="pageSize" [currentPage]="currentPage" [maxSize]="maxSize" [options]="pageOptions" (onSelectPage)="onSelectPage($event)"></lsu-pagination>
 </div>
+
+<form [formGroup]="newPlayerForm" class="ui form" (ngSubmit)="addPlayer(player)">
+  <div class="field">
+    <label>Name</label>
+    <input formControlName="name" type="text" placeholder="Name">
+    <p *ngIf="newPlayerForm.controls.name.errors">This field is required!</p>
+  </div>
+  <button class="ui button" type="submit">Add player</button>
+</form>
