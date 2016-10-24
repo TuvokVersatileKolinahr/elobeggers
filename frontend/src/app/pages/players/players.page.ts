@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Player } from './player.interface';
 import { PlayersService } from './players.service';
 
@@ -20,7 +21,9 @@ export class PlayersPage {
 
   private activeLoader: boolean = false;
 
-  constructor(private playersService : PlayersService) {
+  public newPlayerForm: FormGroup;
+
+  constructor(private playersService : PlayersService, private formBuilder: FormBuilder) {
     this.currentPage = 1;
     this.pageOptions = {
       "color": "default",
@@ -42,12 +45,19 @@ export class PlayersPage {
         console.log("response.json: ", response.json());
         this.playerList = response.json();
         this.totalCount = this.playerList.length;
+        if (this.totalCount < this.pageSize)
+          this.pagerDisabled = true;
         this.data = this.getData(this.currentPage, this.pageSize);
       },
       (err) => {
           //Here you can catch the error
           console.log("test getItems returned err");
       });
+
+      this.newPlayerForm = this.formBuilder.group({
+        name: ['', Validators.required]
+      });
+
   }
 
   getData(pageIndex: number, pageSize: number): Array<any> {
@@ -57,6 +67,10 @@ export class PlayersPage {
       data.push(this.playerList[i]);
     }
     return data;
+  }
+
+  addPlayer({ value, valid }: { value: any, valid: boolean }) {
+    console.log(value, valid);
   }
 
   onSelectPage(pageIndex: number): void {
