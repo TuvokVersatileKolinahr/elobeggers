@@ -13,3 +13,5 @@ npm start
 ```
 
 This will start a server running on [http://localhost:8080/](http://localhost:8080/) wich will proxy to the API backend.
+
+The frontend is based on [Semantic UI](http://semantic-ui.com/) and the project template used is implemented in Angular2 using the excellent demo [angular2-semantic-ui](https://github.com/lon-yang/angular2-semantic-ui).
