@@ -12,9 +12,12 @@ module.exports = webpackMerge(commonConfig, {
     filename: '[name]-[hash].js',
     chunkFilename: '[id].chunk.js'
   },
+  debug: true,
+  devtool: 'source-map',
 
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    // new webpack.optimize.UglifyJsPlugin()
   ],
 
   devServer: {
