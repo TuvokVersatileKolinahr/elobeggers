@@ -20,7 +20,7 @@ Until the gradle scripts are capable of compiling the frontend into the proper p
 
 ```
 cd frontend
-npm build
+npm run build
 git add .
 git commit -am "New frontend or whatever, you get the point"
 git push
