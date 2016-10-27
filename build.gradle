@@ -7,8 +7,19 @@
  * user guide available at https://docs.gradle.org/3.0/userguide/tutorial_java_projects.html
  */
 
+plugins {
+  id "com.moowork.node" version "0.12"
+}
+
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+
+task buildFrontend(type: NpmTask) {
+  workingDir = 'frontend'
+  args = ['run', 'build']
+}
+// Build frontend before processing Java resources
+processResources.dependsOn buildFrontend
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -39,3 +50,19 @@ dependencies {
 	compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
 
 }
+
+//npm install typings --global
+//npm and nodejs configuration from node-plugin
+node {
+  // If true, it will download node using above parameters.
+  // If false, it will try to use globally installed node.
+  download = false
+
+  // Set the work directory for unpacking node
+  workDir = file("${project.buildDir}/nodejs")
+
+  // Set the work directory where node_modules should be located
+  nodeModulesDir = file("${project.projectDir}/frontend")
+}
+
+
