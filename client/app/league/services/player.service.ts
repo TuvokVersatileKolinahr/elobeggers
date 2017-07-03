@@ -22,15 +22,14 @@ export class PlayerService {
     return this.http.get('/api/players/count').map(res => res.json());
   }
 
-  addPlayer(player): Observable<any> {
-    // TODO: add 1500 elo, joindate etc.
+  addPlayer(player: Player): Observable<any> {
     player.elo = 1500;
     player.joinDate = new Date();
     return this.http.post('/api/player', JSON.stringify(player), this.options);
   }
 
-  getPlayer(player): Observable<Player> {
-    return this.http.get(`/api/player/${player._id}`).map(res => res.json());
+  getPlayer(id: String): Observable<Player> {
+    return this.http.get(`/api/player/${id}`).map(res => res.json());
   }
 
   editPlayer(player): Observable<any> {

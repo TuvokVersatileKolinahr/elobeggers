@@ -10,8 +10,7 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-default">
         <tr>
-          <th>Name</th>
-          <th>Elo</th>
+          <th>Player</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -22,10 +21,14 @@
       </tbody>
       <tbody *ngIf="!isEditing">
         <tr *ngFor="let player of players">
-          <td>{{player.name}}</td>
-          <td>{{player.elo}}</td>
           <td>
-            <button class="btn btn-sm btn-warning" (click)="enableEditing(player)"><i class="fa fa-pencil"></i> Edit</button>            <button class="btn btn-sm btn-danger" (click)="deletePlayer(player)"><i class="fa fa-trash"></i> Delete</button>
+            <app-player-show [player]="player"></app-player-show>
+          </td>
+          <td>
+            <div class="card-block">
+              <button class="btn btn-sm btn-warning" (click)="enableEditing(player)"><i class="fa fa-pencil"></i></button>
+              <button class="btn btn-sm btn-danger" (click)="deletePlayer(player)"><i class="fa fa-trash"></i></button>
+            </div>
           </td>
         </tr>
       </tbody>

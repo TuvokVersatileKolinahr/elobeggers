@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, forwardRef } from '@angular/core';
 import { FormGroup, FormControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { PlayerService } from '../services/player.service';
-import { Player } from '../models/player';
+import { PlayerService } from '../../services/player.service';
+import { Player } from '../../models/player';
 
 @Component({
   selector: 'app-players-select',

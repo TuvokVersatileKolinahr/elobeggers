@@ -4,14 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { GamesComponent } from './games/games.component';
-import { PlayersSelectComponent } from './players/players-select.component';
+import { PlayersSelectComponent } from './players/select/players-select.component';
 import { GameService } from './services/game.service';
 import { TeamService } from './services/team.service';
 import { GoalService } from './services/goal.service';
 import { PlayerService } from './services/player.service';
 import { PlayersComponent } from './players/players.component';
+import { PlayerShowComponent } from './players/show/player-show.component';
 import { SharedModule } from '../shared/shared.module';
-import { PlayerSelectFilterPipe } from './players/player-select-filter.pipe';
+import { PlayerSelectFilterPipe } from './players/select/player-select-filter.pipe';
 
 @NgModule({
   imports: [
@@ -30,11 +31,13 @@ import { PlayerSelectFilterPipe } from './players/player-select-filter.pipe';
     // League Components
     GamesComponent,
     PlayersComponent,
+    PlayerShowComponent,
     PlayersSelectComponent
   ],
   declarations: [
     GamesComponent,
     PlayersComponent,
+    PlayerShowComponent,
     PlayersSelectComponent,
     PlayerSelectFilterPipe
   ],
