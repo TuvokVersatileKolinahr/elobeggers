@@ -14,7 +14,7 @@ export class TeamShowComponent implements OnInit {
     players: ['', ''],
     elo: 1500
   };
-  isLoading: Boolean = true;
+  isLoading: Boolean;
 
   constructor(private teamService: TeamService) { }
 

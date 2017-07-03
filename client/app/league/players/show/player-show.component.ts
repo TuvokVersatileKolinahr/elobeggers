@@ -14,7 +14,7 @@ export class PlayerShowComponent implements OnInit, OnChanges {
     name: '',
     elo: 1500
   };
-  isLoading: Boolean = true;
+  isLoading: Boolean;
 
   constructor(private playerService: PlayerService) { }
 

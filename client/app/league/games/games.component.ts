@@ -24,7 +24,7 @@ export class GamesComponent implements OnInit {
   games = [];
   teams: Array<Team> = [];
   players: Array<Player> = [];
-  isLoading: Boolean = true;
+  isLoading: Boolean;
   isEditing = false;
 
   addGameForm: FormGroup;
