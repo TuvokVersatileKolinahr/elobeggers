@@ -1,0 +1,6 @@
+<div [formGroup]="playerSelectGroup">
+  <select [(ngModel)]="selectedPlayer" formControlName="playerList" (ngModelChange)="onChange($event)">
+    <option [ngValue]="undefined" disabled> Select a player </option>
+    <option *ngFor="let player of players" [ngValue]="player._id">{{player.name}}</option>
+  </select>
+</div>
