@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs/Rx';
 
 import { GameService } from '../services/game.service';
 import { TeamService } from '../services/team.service';
 import { PlayerService } from '../services/player.service';
 import { ToastComponent } from '../../shared/toast/toast.component';
 import { PlayersSelectComponent } from '../players/players-select.component';
+
+import { Game } from '../models/game';
+import { Team } from '../models/team';
+import { Player } from '../models/player';
 
 @Component({
   selector: 'app-games',
@@ -17,9 +22,9 @@ export class GamesComponent implements OnInit {
 
   game = {};
   games = [];
-  teams = [];
-  players = [];
-  isLoading = true;
+  teams: Array<Team> = [];
+  players: Array<Player> = [];
+  isLoading: Boolean = true;
   isEditing = false;
 
   addGameForm: FormGroup;
@@ -72,18 +77,56 @@ export class GamesComponent implements OnInit {
 
   addGame() {
     // todo: prepare game
+
+    const teamRed: Team = {
+      players: [this.addGameForm.value.rd, this.addGameForm.value.ra],
+      elo: 1500
+    }
+    const teamBlue: Team = {
+      players: [this.addGameForm.value.bd, this.addGameForm.value.ba],
+      elo: 1500
+    }
+    Observable.forkJoin([
+      this.teamService.addTeam(teamRed),
+      this.teamService.addTeam(teamBlue)
+    ]).subscribe(t => {
+      const newTeamRed: String = JSON.parse(t[0]._body)._id;
+      const newTeamBlue: String = JSON.parse(t[1]._body)._id;
+      const newGame: Game = {
+        teamRed: newTeamRed,
+        teamBlue: newTeamBlue,
+        teamRedScore: 0,
+        teamBlueScore: 0
+      }
+      this.gameService.addGame(newGame).subscribe(
+        res => {
+          const thisGame = res.json();
+          this.games.push(thisGame);
+          this.addGameForm.reset();
+          this.toast.setMessage('item added successfully.', 'success');
+        },
+        error => console.log(error)
+      );
+    });
+
+
+    // const tr = this.teamService.addTeam(teamRed).subscribe(
+    //   res => {
+    //     const newTeamRed = res.json();
+    //     this.toast.setMessage('item added successfully.', 'success');
+    //   },
+    //   error => console.log(error)
+    // );
+    // const tb = this.teamService.addTeam(teamBlue).subscribe(
+    //   res => {
+    //     const newTeamBlue = res.json();
+    //     this.toast.setMessage('item added successfully.', 'success');
+    //   },
+    //   error => console.log(error)
+    // );
     // find team red (this.addGameForm.value.rd, this.addGameForm.value.ra) or create
     // find team blue (this.addGameForm.value.bd, this.addGameForm.value.ba) or create
-    console.log(this.addGameForm.value);
-    this.gameService.addGame(this.addGameForm.value).subscribe(
-      res => {
-        const newGame = res.json();
-        this.games.push(newGame);
-        this.addGameForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
-      },
-      error => console.log(error)
-    );
+    // console.log(this.addGameForm.value);
   }
 
   enableEditing(game) {

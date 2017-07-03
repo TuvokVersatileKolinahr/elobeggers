@@ -4,6 +4,9 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+import { Team } from '../models/team';
+import { Player } from '../models/player';
+
 @Injectable()
 export class TeamService {
 
@@ -20,7 +23,7 @@ export class TeamService {
     return this.http.get('/api/teams/count').map(res => res.json());
   }
 
-  addTeam(team): Observable<any> {
+  addTeam(team: Team): Observable<any> {
     return this.http.post('/api/team', JSON.stringify(team), this.options);
   }
 
