@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-import { PlayersSelectComponent } from './players-select.component';
+import { PlayerShowComponent } from './player-show.component';
 
 /*describe('Component: Players', () => {
   it('should create an instance', () => {
