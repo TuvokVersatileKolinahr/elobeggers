@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
-import { PlayerService } from '../../services/player.service';
-import { TeamService } from '../../services/team.service';
-import { ToastComponent } from '../../../shared/toast/toast.component';
+import { PlayerService } from '../services/player.service';
+import { TeamService } from '../services/team.service';
+import { ToastComponent } from '../../shared/toast/toast.component';
 
 @Component({
   selector: 'app-players',

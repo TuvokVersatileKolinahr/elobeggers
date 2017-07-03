@@ -7,7 +7,7 @@ import { GameService } from '../services/game.service';
 import { TeamService } from '../services/team.service';
 import { PlayerService } from '../services/player.service';
 import { ToastComponent } from '../../shared/toast/toast.component';
-import { PlayersSelectComponent } from '../players/players-select.component';
+import { PlayersSelectComponent } from '../players/select/players-select.component';
 
 import { Game } from '../models/game';
 import { Team } from '../models/team';
