@@ -23,12 +23,20 @@
       </tbody>
       <tbody *ngIf="!isEditing">
         <tr *ngFor="let game of games">
-          <pre>{{ game | json }}</pre>
-          <!--<td>{{game.teamRed._id}}</td>
-          <td>{{game.teamBlue._id}}</td>
+          <!--<pre>{{ game | json }}</pre>-->
+          <td>
+            <div class="card-block">
+              <app-team-show [teamId]="game.teamRed"></app-team-show>
+            </div>
+          </td>
+          <td>
+            <div class="card-block">
+              <app-team-show [teamId]="game.teamBlue"></app-team-show>
+            </div>
+          </td>
           <td>{{game.winner}}</td>
           <td>{{game.teamRedScore}}</td>
-          <td>{{game.teamBlueScore}}</td>-->
+          <td>{{game.teamBlueScore}}</td>
           <td>
             <button class="btn btn-sm btn-warning" (click)="enableEditing(game)"><i class="fa fa-pencil"></i> Edit</button>            <button class="btn btn-sm btn-danger" (click)="deleteGame(game)"><i class="fa fa-trash"></i> Delete</button>
           </td>

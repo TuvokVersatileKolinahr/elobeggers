@@ -1,14 +1,39 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 import { Player } from '../../models/player';
+import { PlayerService } from '../../services/player.service';
 
 @Component({
   selector: 'app-player-show',
   templateUrl: './player-show.component.html',
   styleUrls: ['./player-show.component.scss']
 })
-export class PlayerShowComponent {
-  @Input() player: Player;
+export class PlayerShowComponent implements OnInit, OnChanges {
+  @Input() playerId: String;
+  @Input() player: Player = {
+    name: '',
+    elo: 1500
+  };
+  isLoading: Boolean = true;
 
-  constructor() { }
+  constructor(private playerService: PlayerService) { }
+
+  ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.playerId) {
+      this.getPlayer();
+    }
+  }
+
+  getPlayer() {
+    this.playerService.getPlayerById(this.playerId).subscribe(
+      data => {
+        this.player = data;
+      },
+      error => console.log(error),
+      () => this.isLoading = false
+    );
+  }
 }

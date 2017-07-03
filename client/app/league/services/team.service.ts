@@ -31,6 +31,10 @@ export class TeamService {
     return this.http.get(`/api/team/${team._id}`).map(res => res.json());
   }
 
+  getTeamById(id): Observable<any> {
+    return this.http.get(`/api/team/${id}`).map(res => res.json());
+  }
+
   editTeam(team): Observable<any> {
     return this.http.put(`/api/team/${team._id}`, JSON.stringify(team), this.options);
   }

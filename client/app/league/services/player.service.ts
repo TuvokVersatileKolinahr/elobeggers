@@ -28,7 +28,11 @@ export class PlayerService {
     return this.http.post('/api/player', JSON.stringify(player), this.options);
   }
 
-  getPlayer(id: String): Observable<Player> {
+  getPlayer(player): Observable<Player> {
+    return this.http.get(`/api/player/${player._id}`).map(res => res.json());
+  }
+
+  getPlayerById(id: String): Observable<Player> {
     return this.http.get(`/api/player/${id}`).map(res => res.json());
   }
 

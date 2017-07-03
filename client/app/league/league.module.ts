@@ -11,6 +11,7 @@ import { GoalService } from './services/goal.service';
 import { PlayerService } from './services/player.service';
 import { PlayersComponent } from './players/players.component';
 import { PlayerShowComponent } from './players/show/player-show.component';
+import { TeamShowComponent } from './teams/show/team-show.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlayerSelectFilterPipe } from './players/select/player-select-filter.pipe';
 
@@ -32,6 +33,7 @@ import { PlayerSelectFilterPipe } from './players/select/player-select-filter.pi
     GamesComponent,
     PlayersComponent,
     PlayerShowComponent,
+    TeamShowComponent,
     PlayersSelectComponent
   ],
   declarations: [
@@ -39,6 +41,7 @@ import { PlayerSelectFilterPipe } from './players/select/player-select-filter.pi
     PlayersComponent,
     PlayerShowComponent,
     PlayersSelectComponent,
+    TeamShowComponent,
     PlayerSelectFilterPipe
   ],
   providers: [
