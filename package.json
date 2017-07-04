@@ -6,7 +6,7 @@
   "description": "Fight for your ELO, or beg for it.",
   "angular-cli": {},
   "scripts": {
-    "postinstall": "tsc -p server && ng build -aot -prod",
+    "postinstall": "./node_modules/.bin/tsc -p server && ng build -aot -prod",
     "ng": "ng",
     "build": "ng build",
     "start": "node dist/server/app.js",
