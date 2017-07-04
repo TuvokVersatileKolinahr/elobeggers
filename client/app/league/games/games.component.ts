@@ -52,8 +52,8 @@ export class GamesComponent implements OnInit {
     });
   }
 
-  getGames(amount: Number) {
-    this.gameService.getNewest(amount).subscribe(
+  getGames(max: Number) {
+    this.gameService.getNewest(max).subscribe(
       data => this.games = data,
       error => console.log(error),
       () => this.isLoading = false
