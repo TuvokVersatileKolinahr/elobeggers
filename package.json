@@ -6,7 +6,7 @@
   "description": "Fight for your ELO, or beg for it.",
   "angular-cli": {},
   "scripts": {
-    "postinstall": "./node_modules/typescript/bin/tsc -p server && ng build -aot -prod",
+    "postinstall": "tsc -p server && ng build -aot -prod",
     "ng": "ng",
     "build": "ng build",
     "start": "node dist/server/app.js",
@@ -43,6 +43,7 @@
     "rxjs": "^5.1.0",
     "tether": "1.4.0",
     "ts-node": "~3.0.4",
+    "typescript": "~2.3.3",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
@@ -63,7 +64,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "nodemon": "1.11.0",
     "protractor": "~5.1.2",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "tslint": "~5.3.2"
   }
 }
