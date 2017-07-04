@@ -33,6 +33,10 @@ A window will automatically open at [localhost:4200](http://localhost:4200). Ang
 `npm run prod`: run the project with a production bundle and AOT compilation listening at [localhost:3000](http://localhost:3000) 
 
 ## Deploy (Heroku)
+1. Make sure your changes actually work
+2. push to master
+
+~~## Deploy (Heroku)
 1. Go to Heroku and create a new app
 2. Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
 3. `heroku login`
@@ -49,7 +53,7 @@ A window will automatically open at [localhost:4200](http://localhost:4200). Ang
 14. `git commit -m "Going to Heroku"`
 15. `git push heroku master`
 16. `heroku open`
-17. A window will open with your app online
+17. A window will open with your app online~~
 
 ## Please open an issue if
 * you have any suggestion to improve this project
