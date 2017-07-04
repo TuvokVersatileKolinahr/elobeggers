@@ -23,12 +23,12 @@ export class PlayerShowComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.playerId) {
-      this.getPlayer();
+      this.getPlayer(this.playerId);
     }
   }
 
-  getPlayer() {
-    this.playerService.getPlayerById(this.playerId).subscribe(
+  getPlayer(id: String) {
+    this.playerService.getPlayerById(id).subscribe(
       data => {
         this.player = data;
       },

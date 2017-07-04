@@ -41,7 +41,7 @@ export class GamesComponent implements OnInit {
     public toast: ToastComponent) { }
 
   ngOnInit() {
-    this.getGames();
+    this.getGames(10);
     this.getTeams();
     this.getPlayers();
     this.addGameForm = this.formBuilder.group({
@@ -52,8 +52,8 @@ export class GamesComponent implements OnInit {
     });
   }
 
-  getGames() {
-    this.gameService.getNewest(10).subscribe(
+  getGames(amount: Number) {
+    this.gameService.getNewest(amount).subscribe(
       data => this.games = data,
       error => console.log(error),
       () => this.isLoading = false
@@ -108,25 +108,6 @@ export class GamesComponent implements OnInit {
         error => console.log(error)
       );
     });
-
-
-    // const tr = this.teamService.addTeam(teamRed).subscribe(
-    //   res => {
-    //     const newTeamRed = res.json();
-    //     this.toast.setMessage('item added successfully.', 'success');
-    //   },
-    //   error => console.log(error)
-    // );
-    // const tb = this.teamService.addTeam(teamBlue).subscribe(
-    //   res => {
-    //     const newTeamBlue = res.json();
-    //     this.toast.setMessage('item added successfully.', 'success');
-    //   },
-    //   error => console.log(error)
-    // );
-    // find team red (this.addGameForm.value.rd, this.addGameForm.value.ra) or create
-    // find team blue (this.addGameForm.value.bd, this.addGameForm.value.ba) or create
-    // console.log(this.addGameForm.value);
   }
 
   enableEditing(game) {
@@ -139,7 +120,7 @@ export class GamesComponent implements OnInit {
     this.game = {};
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the games to reset the editing
-    this.getGames();
+    this.getGames(10);
   }
 
   editGame(game) {

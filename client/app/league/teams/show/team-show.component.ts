@@ -19,11 +19,13 @@ export class TeamShowComponent implements OnInit {
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
-    this.getTeam();
+    if (this.teamId) {
+      this.getTeam(this.teamId);
+    }
   }
 
-  getTeam() {
-    this.teamService.getTeamById(this.teamId).subscribe(
+  getTeam(id: String) {
+    this.teamService.getTeamById(id).subscribe(
       data => {
         this.team = data;
       },
