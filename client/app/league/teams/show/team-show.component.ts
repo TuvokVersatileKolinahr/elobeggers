@@ -10,10 +10,7 @@ import { Team } from '../../models/team';
 })
 export class TeamShowComponent implements OnInit {
   @Input() teamId: String;
-  team: Team = {
-    players: ['', ''],
-    elo: 1500
-  };
+  team: Team;
   isLoading: Boolean;
 
   constructor(private teamService: TeamService) { }
