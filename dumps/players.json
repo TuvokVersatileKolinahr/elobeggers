@@ -1,0 +1,41 @@
+{"_id":"23Qa5PhR7aF3cLxZh","name":"Ans","elo":1479,"joinDate":{"$date":"2016-08-23T10:44:01.344Z"}}
+{"_id":"2LubeapTRkSdRbfD5","name":"Pieter Hop","elo":1369.0,"joinDate":{"$date":"2016-04-29T10:23:44.271Z"},"lastPlayed":[{"$date":"2016-11-11T12:08:43.053Z"},{"$date":"2016-12-21T11:31:40.284Z"}]}
+{"_id":"3h7oFa2CZyRm2pbcf","name":"Joep","elo":1416,"joinDate":{"$date":"2016-09-20T10:44:03.961Z"},"lastPlayed":[{"$date":"2017-03-08T11:35:32.429Z"}]}
+{"_id":"3rzoNhw74krG3my2Z","name":"Frank","elo":1463,"joinDate":{"$date":"2017-02-07T11:36:43.434Z"},"lastPlayed":[{"$date":"2017-02-16T11:39:36.388Z"},{"$date":"2017-02-16T11:48:42.766Z"}]}
+{"_id":"5a4zWTyfExwq5mpfg","name":"Anton","elo":1612.0,"joinDate":{"$date":"2016-04-22T10:44:41.841Z"},"lastPlayed":[{"$date":"2017-03-15T11:32:50.672Z"},{"$date":"2017-03-17T11:26:44.832Z"}]}
+{"_id":"5mcGrANT6pg6g38mZ","name":"Ray Ray","elo":1548.0,"joinDate":{"$date":"2016-04-18T10:42:09.265Z"},"belongsTo":"rB8WRiMrR34DkoFrR","lastPlayed":[{"$date":"2017-03-17T16:03:31.947Z"},{"$date":"2017-03-17T16:08:47.977Z"}]}
+{"_id":"8YL245wwTpALBYmmA","name":"Bertin","elo":1209.0,"joinDate":{"$date":"2016-04-19T11:09:17.599Z"},"lastPlayed":[{"$date":"2017-03-17T11:54:45.116Z"},{"$date":"2017-03-17T16:14:47.241Z"}]}
+{"_id":"BTgHJZngTQ7PAhwiK","name":"Tim","elo":1278.0,"joinDate":{"$date":"2016-04-29T14:46:57.147Z"},"lastPlayed":[{"$date":"2016-10-26T10:50:45.033Z"}]}
+{"_id":"BbHQnCvf3s5XGasby","name":"Henk","elo":1536,"joinDate":{"$date":"2016-08-15T10:44:23.387Z"},"lastPlayed":[]}
+{"_id":"Bv8uDe9wSc39G3Cm6","name":"Casper","elo":1421.0,"joinDate":{"$date":"2016-04-18T10:35:33.220Z"},"lastPlayed":[{"$date":"2017-03-17T16:34:31.575Z"},{"$date":"2017-03-17T16:39:20.689Z"}]}
+{"_id":"DaKzJbzsTYtyhpwP9","name":"Wouter","claim":true,"elo":1542,"joinDate":{"$date":"2016-04-16T14:29:50.450Z"},"belongsTo":"ppu9ELJt8BTfM78Eb","lastPlayed":[{"$date":"2017-03-17T16:34:31.575Z"},{"$date":"2017-03-17T16:39:20.689Z"}]}
+{"_id":"HNtgJkTxSvjR8Duoz","name":"P 'hat-trick'","elo":1832.0,"joinDate":{"$date":"2016-04-18T10:42:16.429Z"},"belongsTo":"H6djo6mn6zWk7cPFF","lastPlayed":[{"$date":"2017-03-10T15:59:29.695Z"},{"$date":"2017-03-10T16:08:54.212Z"}]}
+{"_id":"Jb3xmYaPsk827oqnA","name":"Paul","elo":1428,"joinDate":{"$date":"2017-02-17T16:15:32.794Z"},"lastPlayed":[{"$date":"2017-02-17T16:20:22.090Z"},{"$date":"2017-02-17T16:36:38.840Z"}]}
+{"_id":"Khm4p4NDieSYhCsmF","name":"Rogier","elo":1700.0,"joinDate":{"$date":"2016-04-29T14:50:44.638Z"},"retired":true,"retireDate":{"$date":"2016-09-06T14:38:36.621Z"}}
+{"_id":"N6DrQh9NoMFRHFaM3","name":"MaartenH","elo":1382,"joinDate":{"$date":"2016-05-20T14:45:29.477Z"}}
+{"_id":"Neo4R38fRryW8fDM8","name":"SvenS","elo":1818.0,"joinDate":{"$date":"2016-04-18T10:35:49.353Z"},"lastPlayed":[{"$date":"2017-03-15T11:32:50.672Z"},{"$date":"2017-03-16T11:39:53.229Z"}]}
+{"_id":"Qa3pMJ7edpxG6iPym","name":"Nick","elo":1376,"joinDate":{"$date":"2016-05-04T14:37:09.918Z"}}
+{"_id":"QgxP7BvnG2yxaHCPu","name":"Rachid","elo":1447,"joinDate":{"$date":"2016-08-05T11:28:41.772Z"},"retired":true,"retireDate":{"$date":"2016-10-03T07:57:38.991Z"}}
+{"_id":"Qr4hWnYptDufpM9d3","name":"Suzanne","elo":1456,"joinDate":{"$date":"2016-05-11T10:50:39.161Z"},"retired":true,"retireDate":{"$date":"2016-07-28T11:05:30.462Z"}}
+{"_id":"RFXovqmxDFqD2RWYd","name":"Elger","elo":1507.0,"joinDate":{"$date":"2016-04-18T10:46:50.888Z"},"retired":true,"retireDate":{"$date":"2016-06-02T08:45:30.296Z"}}
+{"_id":"WZxtmfAdE2qWpzjtu","name":"SvenN","elo":2301.0,"joinDate":{"$date":"2016-04-21T10:30:02.592Z"},"lastPlayed":[{"$date":"2017-03-14T11:34:26.877Z"},{"$date":"2017-03-16T11:28:22.862Z"}]}
+{"_id":"Xgmgz4GSN7Pktcjg5","name":"Vamsi","elo":1305,"joinDate":{"$date":"2017-02-10T16:18:51.545Z"},"lastPlayed":[{"$date":"2017-03-10T11:44:39.332Z"}]}
+{"_id":"YRSRw8KPyu5ZwLtyY","name":"Jeroen","elo":1366.0,"joinDate":{"$date":"2016-04-25T10:23:45.466Z"},"retired":true,"retireDate":{"$date":"2016-07-28T11:05:19.343Z"}}
+{"_id":"ZkR2XEJAbXxPgiuTy","name":"El Cojones","elo":1862.0,"joinDate":{"$date":"2016-04-18T10:46:56.679Z"},"belongsTo":"JwbMrhRkXcrDKrcyG","lastPlayed":[{"$date":"2017-03-17T16:14:47.241Z"},{"$date":"2017-03-17T16:23:35.089Z"}]}
+{"_id":"aEJSqP5Rwn6fJHaDh","name":"Meloosah","elo":1123.0,"joinDate":{"$date":"2016-04-19T11:10:08.123Z"},"belongsTo":"mEf45bbZxPSjrhHWo","lastPlayed":[{"$date":"2017-03-17T16:29:51.233Z"},{"$date":"2017-03-17T16:39:20.689Z"}]}
+{"_id":"axyWXmjuERvNT589s","name":"AAwouter!","elo":1441,"joinDate":{"$date":"2016-11-10T18:23:14.884Z"},"lastPlayed":[{"$date":"2016-11-28T11:50:53.999Z"}]}
+{"_id":"df6kaePnj7JNAsL62","name":"Anne","elo":1509,"joinDate":{"$date":"2016-04-18T10:35:06.604Z"},"lastPlayed":[{"$date":"2017-03-17T16:23:35.089Z"},{"$date":"2017-03-17T16:34:31.575Z"}]}
+{"_id":"dmRWb43aA5XkvrXHJ","name":"Sander","elo":1347,"joinDate":{"$date":"2016-07-08T10:39:31.220Z"},"lastPlayed":[]}
+{"_id":"f59K3rggZbp2YyS3Z","name":"Nico","elo":1467,"joinDate":{"$date":"2016-08-17T10:29:20.709Z"}}
+{"_id":"fRKNGbWfQd9JcJJiR","name":"Peter","elo":897,"joinDate":{"$date":"2016-07-08T10:28:16.328Z"},"lastPlayed":[{"$date":"2017-03-17T11:40:05.833Z"},{"$date":"2017-03-17T16:20:06.184Z"}]}
+{"_id":"hKZdqQpmM4bssNfsq","name":"Maarten","elo":1604.0,"joinDate":{"$date":"2016-04-29T14:50:27.698Z"},"retired":true,"retireDate":{"$date":"2016-06-02T09:58:42.932Z"}}
+{"_id":"oi3PnAWRA84YEZAwx","name":"Robert","elo":1348,"joinDate":{"$date":"2016-05-26T10:45:30.585Z"}}
+{"_id":"pR2Sz8H3yBSF8r8JR","name":"Britt","elo":1356,"joinDate":{"$date":"2016-06-03T14:57:51.232Z"},"lastPlayed":[{"$date":"2017-03-17T11:33:04.239Z"},{"$date":"2017-03-17T11:49:40.181Z"}]}
+{"_id":"vb6gHPN8YmC5wuJwT","name":"Marc","elo":1445.0,"joinDate":{"$date":"2016-04-22T14:58:39.483Z"}}
+{"_id":"xTpuEujz6BoQpNLJc","name":"Ant1","elo":1302.0,"joinDate":{"$date":"2016-04-18T10:35:40.544Z"},"belongsTo":"jo4bZDYQYiHRdkSSn","lastPlayed":[{"$date":"2017-01-11T11:52:24.743Z"},{"$date":"2017-02-22T11:38:32.623Z"}]}
+{"_id":"xqPZQ8ekad6rETrA4","name":"Liza","elo":1521,"joinDate":{"$date":"2017-02-02T11:38:09.464Z"},"lastPlayed":[{"$date":"2017-02-02T11:38:29.367Z"}]}
+{"_id":"xs2B4d3peMmTvLasp","name":"Bram","elo":1560.0,"joinDate":{"$date":"2016-04-19T11:07:59.146Z"},"lastPlayed":[{"$date":"2017-03-17T16:34:31.575Z"},{"$date":"2017-03-17T16:39:20.689Z"}]}
+{"_id":"xw22uPMJRModwNZtj","name":"Bark","elo":1697,"joinDate":{"$date":"2016-04-18T10:35:25.330Z"},"belongsTo":"Ynh2TxSkvuAgQo9AK","lastPlayed":[{"$date":"2016-12-09T16:09:45.302Z"},{"$date":"2016-12-09T16:14:17.976Z"}]}
+{"_id":"ymPa9aWggJP8nMyfQ","name":"René","elo":1708,"joinDate":{"$date":"2016-09-06T10:45:28.910Z"},"lastPlayed":[{"$date":"2017-03-17T11:40:05.833Z"},{"$date":"2017-03-17T16:03:31.947Z"}]}
+{"_id":"zghhJFZKKEuZNrCX2","name":"PatrickK","elo":1346,"joinDate":{"$date":"2016-06-10T10:44:17.802Z"},"lastPlayed":[{"$date":"2017-03-06T11:39:22.500Z"},{"$date":"2017-03-16T11:39:53.229Z"}]}
+{"_id":"zxWFX3bdEaWxtzcfC","name":"Sarat","elo":1511,"joinDate":{"$date":"2017-02-17T16:31:05.508Z"},"lastPlayed":[{"$date":"2017-02-17T16:40:28.603Z"}]}
