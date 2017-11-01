@@ -3,98 +3,92 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Current games ({{games.length}})</h4>
-  <div class="card-block">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-default">
-        <tr>
-          <th>Red</th>
-          <th>Blue</th>
-          <th>Winner</th>
-          <th>Red score</th>
-          <th>Blue score</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody *ngIf="games.length === 0">
-        <tr>
-          <td colspan="4">There are no games in the DB. Add a new game below.</td>
-        </tr>
-      </tbody>
-      <tbody *ngIf="!isEditing">
-        <tr *ngFor="let game of games">
-          <!--<pre>{{ game | json }}</pre>-->
-          <td>
-            <div class="card-block">
-              <app-team-show [teamId]="game.teamRed"></app-team-show>
-            </div>
-          </td>
-          <td>
-            <div class="card-block">
-              <app-team-show [teamId]="game.teamBlue"></app-team-show>
-            </div>
-          </td>
-          <td>{{game.winner}}</td>
-          <td>{{game.teamRedScore}}</td>
-          <td>{{game.teamBlueScore}}</td>
-          <td>
-            <button class="btn btn-sm btn-warning" (click)="enableEditing(game)"><i class="fa fa-pencil"></i> Edit</button>            <button class="btn btn-sm btn-danger" (click)="deleteGame(game)"><i class="fa fa-trash"></i> Delete</button>
-          </td>
-        </tr>
-      </tbody>
-      <tbody *ngIf="isEditing">
-        <tr>
-          <td colspan="4">
-            <form class="form-inline" #form="ngForm" (ngSubmit)="editGame(game)" style="display:inline">
-              <div class="form-group">
-                <input class="form-control" type="text" name="teamRed" [(ngModel)]="game.teamRed" placeholder="Team Red" required>
-              </div>
-              <div class="form-group">
-                <input class="form-control" type="text" name="teamBlue" [(ngModel)]="game.teamBlue" placeholder="Team Blue" required>
-              </div>
-              <div class="form-group">
-                <input class="form-control" type="text" name="winner" [(ngModel)]="game.winner" placeholder="Winner" required>
-              </div>
-              <div class="form-group">
-                <input class="form-control" type="number" name="teamRedScore" [(ngModel)]="game.teamRedScore" placeholder="Red Score" step="any"
-                  min="0" required>
-              </div>
-              <div class="form-group">
-                <input class="form-control" type="number" name="teamBlueScore" [(ngModel)]="game.teamBlueScore" placeholder="Blue Score"
-                  step="any" min="0" required>
-              </div>
-              <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
-            </form>
-            <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <h4 class="card-header">Current games ({{games.length}})</h4>
+    <div class="card-block">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-default">
+                <tr>
+                    <th>Red</th>
+                    <th>Blue</th>
+                    <th>Winner</th>
+                    <th>Red score</th>
+                    <th>Blue score</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="games.length === 0">
+                <tr>
+                    <td colspan="4">There are no games in the DB. Add a new game below.</td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="!isEditing">
+                <tr *ngFor="let game of games">
+                    <!--<pre>{{ game | json }}</pre>-->
+                    <td>
+                        <div class="card-block">
+                            <app-team-show [teamId]="game.teamRed" [teamColor]="'red'"></app-team-show>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card-block">
+                            <app-team-show [teamId]="game.teamBlue" [teamColor]="'blue'"></app-team-show>
+                        </div>
+                    </td>
+                    <td>{{game.winner}}</td>
+                    <td>{{game.teamRedScore}}</td>
+                    <td>{{game.teamBlueScore}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" (click)="enableEditing(game)"><i class="fa fa-pencil"></i> Edit</button> <button class="btn btn-sm btn-danger" (click)="deleteGame(game)"><i class="fa fa-trash"></i> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="isEditing">
+                <tr>
+                    <td colspan="4">
+                        <form class="form-inline" #form="ngForm" (ngSubmit)="editGame(game)" style="display:inline">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="teamRed" [(ngModel)]="game.teamRed" placeholder="Team Red" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="teamBlue" [(ngModel)]="game.teamBlue" placeholder="Team Blue" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="winner" [(ngModel)]="game.winner" placeholder="Winner" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="teamRedScore" [(ngModel)]="game.teamRedScore" placeholder="Red Score" step="any" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="teamBlueScore" [(ngModel)]="game.teamBlueScore" placeholder="Blue Score" step="any" min="0" required>
+                            </div>
+                            <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
+                        </form>
+                        <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="card" *ngIf="!isEditing">
-  <h4 class="card-header">Add new game</h4>
-  <div class="card-block">
-    <form class="form-inline" [formGroup]="addGameForm" (ngSubmit)="addGame()" style="text-align:center">
-      <div class="form-group">Red defender
-        <app-players-select class="form-control" [players]="players|playerselectfilter:[ra.value, bd.value, ba.value]" name="rd"
-          formControlName="rd"></app-players-select>
-      </div>
-      <div class="form-group">Red attacker
-        <app-players-select class="form-control" [players]="players|playerselectfilter:[rd.value, bd.value, ba.value]" name="ra"
-          formControlName="ra"></app-players-select>
-      </div>
-      <div class="form-group">Blue defender
-        <app-players-select class="form-control" [players]="players|playerselectfilter:[rd.value, ra.value, ba.value]" name="bd"
-          formControlName="bd"></app-players-select>
-      </div>
-      <div class="form-group">Blue attacker
-        <app-players-select class="form-control" [players]="players|playerselectfilter:[rd.value, ra.value, bd.value]" name="ba"
-          formControlName="ba"></app-players-select>
-      </div><br>
-      <button class="btn btn-primary" type="submit" [disabled]="!addGameForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
-    </form>
-    <pre>{{ addGameForm.value | json }}</pre>
-  </div>
+    <h4 class="card-header">Add new game</h4>
+    <div class="card-block">
+        <form class="form-inline" [formGroup]="addGameForm" (ngSubmit)="addGame()" style="text-align:center">
+            <div class="form-group">Red defender
+                <app-players-select class="form-control" [players]="players|playerselectfilter:[ra.value, bd.value, ba.value]" name="rd" formControlName="rd"></app-players-select>
+            </div>
+            <div class="form-group">Red attacker
+                <app-players-select class="form-control" [players]="players|playerselectfilter:[rd.value, bd.value, ba.value]" name="ra" formControlName="ra"></app-players-select>
+            </div>
+            <div class="form-group">Blue defender
+                <app-players-select class="form-control" [players]="players|playerselectfilter:[rd.value, ra.value, ba.value]" name="bd" formControlName="bd"></app-players-select>
+            </div>
+            <div class="form-group">Blue attacker
+                <app-players-select class="form-control" [players]="players|playerselectfilter:[rd.value, ra.value, bd.value]" name="ba" formControlName="ba"></app-players-select>
+            </div><br>
+            <button class="btn btn-primary" type="submit" [disabled]="!addGameForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
+        </form>
+        <!-- <pre>{{ addGameForm.value | json }}</pre> -->
+    </div>
 </div>

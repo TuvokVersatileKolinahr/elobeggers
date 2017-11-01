@@ -10,6 +10,7 @@ import { Team } from '../../models/team';
 })
 export class TeamShowComponent implements OnInit {
   @Input() teamId: String;
+  @Input() teamColor: String;
   team: Team;
   isLoading: Boolean;
 
